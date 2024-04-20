@@ -1,7 +1,6 @@
 <?php
 require_once 'config.php';
 
-// SQL запрос для получения лидов с фильтром по городу (если применяется)
 $sql = "SELECT * FROM leads";
 if (isset($_POST['city']) && $_POST['city'] !== '') {
     $city = $_POST['city'];
@@ -9,7 +8,6 @@ if (isset($_POST['city']) && $_POST['city'] !== '') {
 }
 $result = $conn->query($sql);
 
-// Создание CSV файла и запись данных в него
 $filename = "leads.csv";
 header('Content-Type: text/csv');
 header('Content-Disposition: attachment; filename="' . $filename . '";');

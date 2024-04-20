@@ -1,14 +1,12 @@
 <?php
 require_once 'config.php';
 
-// Обработка данных из формы
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullName = $_POST["fullName"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $city = $_POST["city"];
 
-    // SQL запрос для вставки данных в таблицу
     $sql = "INSERT INTO leads (full_name, email, phone, city) VALUES ('$fullName', '$email', '$phone', '$city')";
 
     if ($conn->query($sql) === TRUE) {

@@ -42,8 +42,6 @@
         <tbody>
             <?php
             require_once '../backend/config.php';
-
-            // SQL запрос для получения лидов с фильтром по городу
             $sql = "SELECT * FROM leads";
             if (isset($_GET['city']) && $_GET['city'] !== '') {
                 $city = $_GET['city'];
