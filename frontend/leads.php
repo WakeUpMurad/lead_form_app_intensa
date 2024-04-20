@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список лидов</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
 </head>
 <body>
+<header class="navbar">
+    <div class="container">
+        <nav class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="leads.php">Список лидов</a>
+        </nav>
+    </div>
+</header>
     <h1>Список лидов</h1>
 
     <form action="" method="GET">
@@ -30,7 +42,7 @@
         </thead>
         <tbody>
             <?php
-            require_once 'config.php';
+            require_once '../backend/config.php';
 
             // SQL запрос для получения лидов с фильтром по городу
             $sql = "SELECT * FROM leads";
@@ -58,7 +70,7 @@
     </table>
 
     <br>
-    <form action="export.php" method="POST">
+    <form action="../backend/export.php" method="POST">
         <input type="hidden" name="city" value="<?php echo isset($_GET['city']) ? $_GET['city'] : ''; ?>">
         <button type="submit">Экспорт в CSV</button>
     </form>
