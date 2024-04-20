@@ -9,7 +9,6 @@
       href="style.css"
     />
 </head>
-<body>
 <header class="navbar">
     <div class="container">
         <nav class="nav-links">
@@ -18,8 +17,8 @@
         </nav>
     </div>
 </header>
+<body>
     <h1>Список лидов</h1>
-
     <form action="" method="GET">
         <label for="cityFilter">Фильтр по городу:</label>
         <select id="cityFilter" name="city">
